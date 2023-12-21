@@ -514,36 +514,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </script>
 <!-- respone form -->
 <script>
-	const scriptURL =
-	  "https://script.google.com/macros/s/AKfycbzAoU9YmxVMtbvX3Dgv07MyUaQwEJoxKzDWhlvicKRGbE-n2FKU9Kele0CIhSMQXgsaFg/exec";
-	const form = document.getElementById("Respone-Contact-Portfolio");
-	const btnSubmit = document.querySelector(".btn-submit");
+	const scriptURL = "https://script.google.com/macros/s/AKfycbzAoU9YmxVMtbvX3Dgv07MyUaQwEJoxKzDWhlvicKRGbE-n2FKU9Kele0CIhSMQXgsaFg/exec";
+	const form = document.forms["Respone-Contact-Portfolio"];
+	const btnsubmit = document.querySelector(".btn-submit")
 	const myAlert = document.querySelector(".my-alert");
-  
+
 	form.addEventListener("submit", (e) => {
-	  e.preventDefault();
-	  fetch(scriptURL, {
-		method: "POST",
-		body: new FormData(form),
-	  })
-		.then((response) => {
-		  if (response.ok) {
-			// Check if the response status is OK (status code 200-299)
-			myAlert.classList.remove("d-none");
+        e.preventDefault();
+		fetch(scriptURL, {method: "POST", body: new FormData(form)})
+          .then((response) => {
+			myAlert.classList.toggle("d-none");
 			form.reset();
-			console.log("Success!", response);
-		  } else {
-			// Handle non-OK responses (e.g., server error)
-			throw new Error(`Error: ${response.status} - ${response.statusText}`);
-		  }
-		})
-		.catch((error) => {
-		  // Handle fetch errors or server errors
-		  console.error("Error!", error.message);
-		});
-	});
-  </script>
-  
+            console.log("Success!", response);
+          })
+		  .catch((error) => console.error("Error!", error.message));
+      });
+</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </div>
 
