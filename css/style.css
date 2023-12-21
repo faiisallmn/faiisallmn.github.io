@@ -771,6 +771,17 @@ h2.resp-accordion {
   outline: none;
   text-transform: uppercase;
 }
+.contactgrid3 {
+  padding: 2em 0 0 0;
+}
+.contactgrid3 input[type="loading"] {
+  color: #ef664d;
+  background: none;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  text-transform: uppercase;
+}
 .contactgrid2 input[type="submit"]:hover {
   color: #d5d6d7;
 }
